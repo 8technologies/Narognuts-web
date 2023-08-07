@@ -50,11 +50,11 @@ class seedSellerController extends Controller
         $SeedSeller->Remarks = $request->input('Remarks');
         $res = $SeedSeller->save();
 
-        if($res){
-            return back()->with('successs', 'You havw registered successfully');
-        }else{
-           return back()->with('fail','something is wrong');
-        }
+        // if($res){
+        //     return back()->with('successs', 'You havw registered successfully');
+        // }else{
+        //    return back()->with('fail','something is wrong');
+        // }
        
     }
 

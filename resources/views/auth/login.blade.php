@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet--> --}}
-    {{-- @extends('layouts.app') --}}
+     {{-- @extends('layouts.master') --}}
 
 
     <style media="screen">
@@ -21,6 +21,8 @@
 }
 body{
     /* background-color: #080710; */
+    animation: animate 30s ease-in-out infinite;
+    background-size: cover;
     background-image:url("dist/img/peanut-plant-bg.jpg");
 }
 .background{
@@ -37,6 +39,17 @@ body{
     position: absolute;
     border-radius: 50%;
 }
+@keyframes animate{
+    0%,100%{ background-image:url(dist/img/Flower.jpg);
+     }
+     25%{ background-image:url(dist/img/GardenOne.png);
+     }
+     50%{ background-image:url(dist/img/peanut-plant-bg.jpg);
+     }
+    75%{ background-image:url(dist/img/Fruit.jpg);
+     }
+
+}
 
 form{
     height: 520px;
@@ -49,7 +62,8 @@ form{
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    /* box-shadow: 0 0 40px rgba(8,7,16,0.6); */
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
     padding: 50px 35px;
 }
 form *{
@@ -121,6 +135,9 @@ button{
 }
 
     </style>
+    
+
+    
 </head>
 <body>
     <div class="background">
@@ -168,7 +185,7 @@ button{
                                     </label>
                                 </div>
                             </div>
-                        </div>  --}}
+                        </div>    --}}
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">

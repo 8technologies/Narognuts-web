@@ -1,16 +1,16 @@
 
 <li class="nav-item menu-open">
-    <a href="#" class="nav-link active">
+    {{-- <a href="#" class="nav-link active">
       <i class="nav-icon fas fa-tachometer-alt"></i>
       <p>
         Dashboard
         <i class="right fas fa-angle-left"></i>
       </p>
-    </a>
+    </a> --}}
     <ul class="nav nav-treeview">
       <li class="nav-item">
-        <a href="./index.html" class="nav-link active">
-          <i class="far fa-circle nav-icon"></i>
+        <a href="{{route('dashboardindex')}}" class="nav-link active">
+          <i class="fas fa-tachometer-alt nav-icon"></i>
           <p>Dashboard </p>
         </a>
       </li>
@@ -29,19 +29,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('farmerRecordsIndex')}}" class="nav-link">
+                <a href="{{route('farmerrecords_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Farmer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('multiplierRecords')}}" class="nav-link">
+                <a href="{{route('multiplierrecords_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Multiplier</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('serviceProviderRecords')}}" class="nav-link">
+                <a href="{{route('serviceproviderrecords_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Service Provider</p>
                 </a>
@@ -62,13 +62,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('gardenReg')}}" class="nav-link">
+                <a href="{{route('gardenRegCreate')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Garden Registration</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="{{route('recordsmanagementindex')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Records Management</p>
                 </a>
@@ -88,7 +88,7 @@
               <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Ask The Expert</p>
                 </a>
               </li>
             
@@ -107,7 +107,13 @@
               <li class="nav-item">
                 <a href="{{route('seedSeller')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sellers</p>
+                  <p>Sellers of Seed</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('serviceSeller')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sellers of Service</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -117,7 +123,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="{{route('preOrder')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pre Order</p>
                 </a>
@@ -125,38 +131,7 @@
             </ul>
             </li>
 
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                <p>
-                    Ask the Expert
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{route('gardenReg')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Record Video</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Record Image</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Text Input</p>
-                  </a>
-                </li>
-
-            </ul>
           
-           
-          </li>
           <li class="nav-header">Others</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">

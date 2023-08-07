@@ -41,13 +41,28 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="dist/img/NARO_Logo.jpg" alt="gnut.jpg" height="60" width="60">
   </div>
 
 
     <style>
 
-        .required::after{
+
+  .text-heading {
+      display: inline-block;
+      background-color: rgb(223, 223, 222);
+      color: rgb(7, 7, 7);
+      font-weight: bold;
+      padding: 10px;
+    }
+    .container {
+      text-align: center;
+      background-color: rgb(223, 223, 222);
+      /* color: white; */
+      padding: 10px;
+      border-radius: 20px;
+    }
+  .required::after{
             content: " *";
             color: red;
             font-size:20px;
@@ -116,7 +131,7 @@
                       </li>
                   @endguest
                 </ul>
-              <ul>
+              {{-- <ul>
                   <!-- Notifications Dropdown Menu -->
                   <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -154,13 +169,14 @@
                       <i class="fas fa-th-large"></i>
                     </a>
                   </li> --}}
-                </ul>
+                {{--</ul> --}}
               </nav> 
             
               
               <!-- /.navbar -->
             <!-- Left side column. contains the logo and sidebar -->
             @include('layouts.sidebar')
+            @include('inc.messages')
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">

@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('content') 
-
+<div class = "container"><h3 class="text-heading">Seed Detail</h3></div>
     <section class="content">
       <form method="POST" enctype="multipart/form-data" action="{{ route('seedSeller') }}" class="container mt-4">
         @csrf
@@ -64,7 +64,7 @@
       </div>
     
       <div class="form-group row">
-        <div class="col-sm-10 offset-sm-2">
+        <div class="col-sm-2 offset-sm-10">
           <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </div>

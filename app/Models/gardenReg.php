@@ -5,8 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class gardenReg extends Model
+class GardenReg extends Model
 {
+    use HasFactory;
+
+    protected $table = 'garden_regs';
 
     protected $fillable = [
         'GardenName',
@@ -22,5 +25,4 @@ class gardenReg extends Model
         'PurposeOfPlanting',
     ];
 
-    use HasFactory;
 }
