@@ -229,14 +229,14 @@ body{
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="dist/img/gnut-dp.jpg" alt="">
+        <img src="{{ asset('dist/img/gnut-dp.jpg') }}" alt="">
         <div class="text">
           <span class="text-1">Welcome to Agriculture in Modern era! <br> Advance your Farming!</span>
           <span class="text-2">Let's get started</span>
         </div>
       </div>
       <div class="back">
-        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        <!--<img class="backImg" src="images/backImg.jpg') }}" alt="">-->
         <div class="text">
           <span class="text-1">Complete miles of journey <br> with one step</span>
           <span class="text-2">Let's get started</span>
