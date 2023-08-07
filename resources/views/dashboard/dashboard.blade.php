@@ -3,9 +3,11 @@
 
 @section('content')
 <section class="content">
+  <div class="row">
     <div class="container-fluid">
+      <div class="row">
  <!-- Small boxes (Stat box) -->
-      <div class="col-lg-4 col-8">
+      <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
@@ -22,7 +24,7 @@
 
         <!-- ./col -->
      
-      <div class="row">
+      
         <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
@@ -42,7 +44,8 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>44</h3>
+              {{-- {{app/Models/multiplierRecord::count()}} --}}
 
               <p>Multipliers</p>
             </div>

@@ -67,12 +67,12 @@
                   <p>Garden Registration</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{route('recordsmanagementindex')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Records Management</p>
                 </a>
-              </li>
+              </li> --}}
 
             </ul>
           </li>
@@ -105,7 +105,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('seedSeller')}}" class="nav-link">
+                <a href="{{route('seedseller_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sellers of Seed</p>
                 </a>

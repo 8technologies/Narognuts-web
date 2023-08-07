@@ -15,6 +15,7 @@ class SeedSeller extends Model
         'Price_Per_Unit',
         'PaymentMode',
         'Remarks',
+        'image_path',
     ];
     use HasFactory;
 }

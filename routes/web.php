@@ -8,7 +8,7 @@ use App\Http\Controllers\MultiplierRecordsController;
 use App\Http\Controllers\gardenRegController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\seedSellerController;
+use App\Http\Controllers\SeedSellerController;
 use App\Http\Controllers\serviceSellerController;
 use App\Http\Controllers\preOrderController;
 use App\Http\Controllers\RecordsManagementController;
@@ -116,7 +116,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //     Route::post("create", [seedSellerController::class, "create"]);
     // });
     
-
 });
 
 

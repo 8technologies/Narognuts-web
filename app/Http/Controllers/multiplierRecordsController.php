@@ -125,6 +125,6 @@ class MultiplierRecordsController extends Controller
     {
         $multiplier_records = MultiplierRecord::find($id);
         $multiplier_records->delete();
-        return redirect('/multiplierrecord')->with('success', 'updated Successfully');
+        return redirect('/multiplierrecord')->with('success', 'deleted Successfully');
     }
 }

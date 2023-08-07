@@ -3,7 +3,7 @@
 @section('content') 
 <div class = "container"><h3 class="text-heading">Seed Detail</h3></div>
     <section class="content">
-      <form method="POST" enctype="multipart/form-data" action="{{ route('seedSeller') }}" class="container mt-4">
+      <form method="POST" enctype="multipart/form-data" action="{{ route('seedseller') }}" class="container mt-4">
         @csrf
       <div class="form-group row">
         <label for="Name" class=" required col-sm-2 col-form-label">Name:</label>
@@ -41,7 +41,7 @@
         <label for="PaymentMode" class="required col-sm-2 col-form-label">PaymentMode:</label>
         <div class="col-sm-10">
           <select class="form-control" id="PaymentMode" name="PaymentMode">
-            <option value="mm">Mobile money</option>
+            <option value="mobile money">Mobile money</option>
             <option value="cash">Cash</option>
           </select>
         </div>
