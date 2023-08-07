@@ -7,6 +7,7 @@ use App\Http\Controllers\multiplierRecordsController;
 use App\Http\Controllers\gardenRegController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\seedSellerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,5 +55,16 @@ Route::post('/gardenReg', [gardenRegController::class, "store"])->name('gardenRe
 Route::post("create", [gardenRegController::class, "create"]);
 Route::get('/store', [gardenRegController::class, "store"]);
 
+Route::get("create", [seedSellerController::class, "create"]);
+Route::get("seedSeller", [seedSellerController::class, "index"])->name('seedSeller');
+Route::post('/seedSeller', [seedSellerController::class, "store"])->name('seedSeller');
+Route::post("create", [seedSellerController::class, "create"]);
+Route::get('/store', [seedSellerController::class, "store"]);
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

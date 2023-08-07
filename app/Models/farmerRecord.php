@@ -22,5 +22,8 @@ class farmerRecord extends Model
         'NumberOfDependants',
         'LevelOfEducation'
     ];
+// public function user(){
+//     return $this->belongsTo(User::class);
+// }
     use HasFactory;
 }

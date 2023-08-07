@@ -31,7 +31,7 @@ class multiplierRecordsController extends Controller
        // return ('value posted');
         $this->validate($request,[
             'FirstName' => ['required', 'string', 'max:255'],
-            'MiddleName' => ['required', 'string', 'max:255'],
+            'MiddleName' => ['max:255'],
             'LastName' => ['required', 'string', 'max:255'],
             'Sex' => ['required', 'string', 'max:255'],
             'PhoneNumber' => ['required', 'string', 'max:255', 'unique:multiplier_records'],

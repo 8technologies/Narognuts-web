@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('farmer_records', function (Blueprint $table) {
             $table->id();
-           // $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('FirstName');
             $table->string('MiddleName');
             $table->string('LastName');
