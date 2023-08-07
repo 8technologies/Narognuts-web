@@ -14,6 +14,7 @@ use App\Http\Controllers\preOrderController;
 use App\Http\Controllers\RecordsManagementController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,3 +120,35 @@ Route::post('store', [UsersController::class, "store"])->name('userstore');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// SetUp scripts
+
+Route::get('optimize-clear', function () {
+    Artisan::call('optimize:clear');
+    return Artisan::output();
+});
+
+Route::get('migrate', function () {
+    Artisan::call('migrate');
+    return Artisan::output();
+});
+
+Route::get('migrate-fresh', function () {
+    Artisan::call('migrate:fresh');
+    return Artisan::output();
+});
+
+Route::get('composer-install', function () {
+    $exec = shell_exec('php composer.phar install');
+    return $exec;
+});
+
+Route::get('composer-dump-autoload', function () {
+    Artisan::call('composer dump-autoload');
+    return '<h1>composer dump-autoload Artisan command executed</h1>';
+});
+
+Route::get('storage-link', function () {
+    Artisan::call('storage:link');
+    return Artisan::output();
+});
