@@ -40,13 +40,13 @@ body{
     border-radius: 50%;
 }
 @keyframes animate{
-    0%,100%{ background-image:url({{ asset('dist/img/Flower.jpg') }};
+    0%,100%{ background-image:url({{ asset('dist/img/Flower.jpg') }});
      }
      25%{ background-image:url({{ asset('dist/img/GardenOne.png') }});
      }
-     50%{ background-image:url({{ asset('dist/img/peanut-plant-bg.jpg') }};
+     50%{ background-image:url({{ asset('dist/img/peanut-plant-bg.jpg') }});
      }
-    75%{ background-image:url({{ asset('dist/img/Fruit.jpg') }};
+    75%{ background-image:url({{ asset('dist/img/Fruit.jpg') }});
      }
 
 }
