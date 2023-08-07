@@ -8,7 +8,7 @@ use App\Http\Controllers\MultiplierRecordsController;
 use App\Http\Controllers\gardenRegController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\seedSellerController;
+use App\Http\Controllers\SeedSellerController;
 use App\Http\Controllers\serviceSellerController;
 use App\Http\Controllers\preOrderController;
 use App\Http\Controllers\RecordsManagementController;
@@ -27,7 +27,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -70,10 +70,12 @@ Route::post('/gardenReg', [gardenRegController::class, "store"])->name('gardenRe
 Route::post("gardenRegCreate", [gardenRegController::class, "create"])->name('gardenRegCreate');
 Route::get('/store', [gardenRegController::class, "store"]);
 
-Route::get("create", [seedSellerController::class, "create"]);
-Route::get("seedSeller", [seedSellerController::class, "index"])->name('seedSeller');
-Route::post('/seedSeller', [seedSellerController::class, "store"])->name('seedSeller');
-Route::get('/store', [seedSellerController::class, "store"]);
+Route::get("seedseller_edit/{id}", [SeedSellerController::class, "edit"])->name('seedseller_edit');
+Route::get("seedseller_destroy/{id}", [SeedSellerController::class, "destroy"])->name('seedseller_destroy');
+Route::get("seedseller_create", [SeedSellerController::class, "create"])->name('seedseller_create');
+Route::get("seedseller", [SeedSellerController::class, "index"])->name('seedseller');
+Route::post('/seedseller', [SeedSellerController::class, "store"])->name('seedseller');
+Route::get('/store', [SeedSellerController::class, "store"]);
 
 Route::get("create", [serviceSellerController::class, "create"]);
 Route::get("serviceSeller", [serviceSellerController::class, "index"])->name('serviceSeller');

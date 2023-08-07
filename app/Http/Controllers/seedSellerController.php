@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\SeedSeller;
 use Illuminate\Http\Request;
 
-class seedSellerController extends Controller
+class SeedSellerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('MarketPlace.seedSeller');
+    { 
+        $seed_sellers = SeedSeller::all();
+        return view('seedseller.index')->with('seed_sellers', $seed_sellers);
     }
 
     /**
@@ -20,7 +21,7 @@ class seedSellerController extends Controller
      */
     public function create()
     {
-        //
+        return view('seedseller.seedseller');
     }
 
     /**
@@ -28,6 +29,7 @@ class seedSellerController extends Controller
      */
     public function store(Request $request)
     {
+       // dd($request->all());
        // return ('value posted');
         $this->validate($request,[
             'Name' => ['required', 'string', 'max:255'],
@@ -36,10 +38,11 @@ class seedSellerController extends Controller
             'Price_Per_Unit' => ['required', 'string', 'max:255',],
             'PaymentMode' => ['required', 'string', 'max:255'],
             'Remarks' => ['required', 'string', 'max:255'],
-            'image_path' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
         ]);
         $newImageName = time().'-'.'.'.$request->image->extension();
-        dd($newImageName);
+        $request->image->move(public_path('images'),$newImageName);
+        // dd($test);
 
         $SeedSeller = new SeedSeller();
         $SeedSeller->Name = $request->input('Name');
@@ -48,6 +51,7 @@ class seedSellerController extends Controller
         $SeedSeller->Price_Per_Unit = $request->input('Price_Per_Unit');
         $SeedSeller->PaymentMode = $request->input('PaymentMode');
         $SeedSeller->Remarks = $request->input('Remarks');
+        $SeedSeller->image_path =$newImageName;
         $res = $SeedSeller->save();
 
         // if($res){
@@ -55,7 +59,7 @@ class seedSellerController extends Controller
         // }else{
         //    return back()->with('fail','something is wrong');
         // }
-       
+       return redirect('seedseller')->with('success', 'Submitted Successfully');
     }
 
     /**
@@ -71,7 +75,8 @@ class seedSellerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $seed_sellers = SeedSeller::find($id);
+        return view('seedseller.edit')->with('seed_sellers', $seed_sellers);
     }
 
     /**
@@ -79,7 +84,35 @@ class seedSellerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request,[
+            'Name' => ['required', 'string', 'max:255'],
+            'Quantity' => ['required', 'string', 'max:255'],
+            'Unit' => ['required', 'string', 'max:255'],
+            'Price_Per_Unit' => ['required', 'string', 'max:255',],
+            'PaymentMode' => ['required', 'string', 'max:255'],
+            'Remarks' => ['required', 'string', 'max:255'],
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+        ]);
+        $newImageName = time().'-'.'.'.$request->image->extension();
+        $request->image->move(public_path('images'),$newImageName);
+        // dd($test);
+
+        $SeedSeller = SeedSeller::find($id);
+        $SeedSeller->Name = $request->input('Name');
+        $SeedSeller->Quantity = $request->input('Quantity');
+        $SeedSeller->Unit = $request->input('Unit');
+        $SeedSeller->Price_Per_Unit = $request->input('Price_Per_Unit');
+        $SeedSeller->PaymentMode = $request->input('PaymentMode');
+        $SeedSeller->Remarks = $request->input('Remarks');
+        $SeedSeller->image_path =$newImageName;
+        $res = $SeedSeller->save();
+
+        // if($res){
+        //     return back()->with('successs', 'You havw registered successfully');
+        // }else{
+        //    return back()->with('fail','something is wrong');
+        // }
+       return redirect('seedseller')->with('success', 'Submitted Successfully');
     }
 
     /**
@@ -87,6 +120,8 @@ class seedSellerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $seed_sellers = SeedSeller::find($id);
+        $seed_sellers->delete();
+        return redirect('/seedseller')->with('success', 'deleted Successfully');
     }
 }

@@ -52,7 +52,7 @@ body{
 }
 
 form{
-    height: 520px;
+    height: 620px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -192,6 +192,10 @@ button{
                                 <button type="submit">
                                     {{ __('Login') }}
                                 </button>
+                                    {{-- <button  type="submit" class="btn btn-danger">
+                                        {{ __('Register') }}
+                                    </button> --}}
+                                
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
