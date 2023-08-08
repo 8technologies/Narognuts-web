@@ -30,6 +30,9 @@ use Illuminate\Support\Facades\Artisan;
 Auth::routes(['verify' => true]);
 
 Route::middleware(['auth', 'verified'])->group(function () {
+        Route::get('/', function () {
+        return redirect()->route('home');
+    });
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
