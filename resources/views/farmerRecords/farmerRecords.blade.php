@@ -1,4 +1,4 @@
-
+{{-- Hello --}}
 
 @extends('layouts.app')
 @section('content')  
