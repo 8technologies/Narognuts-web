@@ -67,6 +67,7 @@
         <div class="col-sm-2 offset-sm-10">
           <button type="submit" class="btn btn-success">Submit</button>
         </div>
+        {{-- <a href="{{ route('seedseller_show') }}" class="btn btn-primary">Ma</a> --}}
       </div>
     </form>
     @endsection

@@ -9,7 +9,7 @@ use App\Http\Controllers\gardenRegController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeedSellerController;
-use App\Http\Controllers\serviceSellerController;
+use App\Http\Controllers\ServiceSellerController;
 use App\Http\Controllers\preOrderController;
 use App\Http\Controllers\RecordsManagementController;
 use App\Http\Controllers\UsersController;
@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Artisan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::view('/', 'auth/login');
 Auth::routes(['verify' => true]);
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -74,14 +74,20 @@ Route::get('/store', [gardenRegController::class, "store"]);
 Route::get("seedseller_edit/{id}", [SeedSellerController::class, "edit"])->name('seedseller_edit');
 Route::get("seedseller_destroy/{id}", [SeedSellerController::class, "destroy"])->name('seedseller_destroy');
 Route::get("seedseller_create", [SeedSellerController::class, "create"])->name('seedseller_create');
+Route::get("seedseller_show/{id}", [SeedSellerController::class, "show"])->name('seedseller_show');
+Route::get("seedmarket", [SeedSellerController::class, "marketplace"])->name('seedmarket');
 Route::get("seedseller", [SeedSellerController::class, "index"])->name('seedseller');
 Route::post('/seedseller', [SeedSellerController::class, "store"])->name('seedseller');
 Route::get('/store', [SeedSellerController::class, "store"]);
 
-Route::get("create", [serviceSellerController::class, "create"]);
-Route::get("serviceSeller", [serviceSellerController::class, "index"])->name('serviceSeller');
-Route::post('/serviceSeller', [serviceSellerController::class, "store"])->name('serviceSeller');
-Route::get('/store', [serviceSellerController::class, "store"]);
+Route::get("serviceseller_edit/{id}", [ServiceSellerController::class, "edit"])->name('serviceseller_edit');
+Route::get("serviceseller_create", [ServiceSellerController::class, "create"])->name('serviceseller_create');
+Route::get("serviceseller_destroy/{id}", [ServiceSellerController::class, "destroy"])->name('serviceseller_destroy');
+Route::get("serviceseller_show/{id}", [ServiceSellerController::class, "show"])->name('serviceseller_show');
+Route::get("servicemarket", [ServiceSellerController::class, "marketplace"])->name('servicemarket');
+Route::get("serviceseller", [ServiceSellerController::class, "index"])->name('serviceseller');
+Route::post('/serviceseller', [ServiceSellerController::class, "store"])->name('serviceseller');
+Route::get('/store', [ServiceSellerController::class, "store"]);
 
 Route::get("create", [preOrderController::class, "create"]);
 Route::get("preOrder", [preOrderController::class, "index"])->name('preOrder');
@@ -97,7 +103,7 @@ Route::get('/store', [DashboardController::class, "store"]);
 
 Route::get("create", [RecordsManagementController::class, "create"]);
 Route::get("recordsmanagementindex", [RecordsManagementController::class, "index"])->name('recordsmanagementindex');
-Route::post('/recordsmanagementindex', [RecordsManagementController::class, "store"])->name('dashboardindex');
+Route::post('/recordsmanagementindex', [RecordsManagementController::class, "store"])->name('recordsmanagementindex');
 Route::get('/store', [RecordsManagementController::class, "store"]);
 
 

@@ -61,11 +61,14 @@
         <div class="col-sm-10">
           <input type="file" id="image" name="image" value = "{{$seed_sellers->image_path}}"required>
         </div>
+        <img
+        src = {{asset('images/'.$seed_sellers->image_path)}}
+        height = "450px">
       </div>
     
       <div class="form-group row">
           <div class="col-sm-10 offset-sm-2">
-              <a class="btn btn-danger" href = "#"> Back</a>
+              <a class="btn btn-danger" href = "{{route('seedseller')}}"> Back</a>
           <div class="col-sm-2 offset-sm-10">
             <button type="submit" class="btn btn-primary">Edit</button>
           </div> 

@@ -111,17 +111,30 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('serviceSeller')}}" class="nav-link">
+                <a href="{{route('seedmarket')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Seed Market</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('serviceseller_create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sellers of Service</p>
                 </a>
               </li>
+
               <li class="nav-item">
+                <a href="{{route('servicemarket')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Service Market</p>
+                </a>
+              </li>
+              {{-- <li class="nav-item">
                 <a href="pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Orders</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{route('preOrder')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -132,7 +145,7 @@
             </li>
 
           
-          <li class="nav-header">Others</li>
+          {{-- <li class="nav-header">Others</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -155,7 +168,7 @@
                   <p>Project Detail</p>
                 </a>
               </li>
-             
+              --}}
 {{--          
              
           <li class="nav-header">LABELS</li>

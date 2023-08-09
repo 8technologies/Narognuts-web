@@ -85,7 +85,9 @@
       
       <div class="form-group row">
         <div class="col-sm-10 offset-sm-2">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <div class="col-sm-10 offset-sm-2">
+            <a class="btn btn-danger" href = "{{route('serviceproviderrecords')}}"> Back</a>
+          <button type="submit" class="btn btn-success">Edit</button>
         </div>
       </div>
     </form>

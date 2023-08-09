@@ -15,6 +15,11 @@ class SeedSellerController extends Controller
         $seed_sellers = SeedSeller::all();
         return view('seedseller.index')->with('seed_sellers', $seed_sellers);
     }
+    public function marketplace(){
+
+        $seed_sellers = SeedSeller::all();
+        return view('seedseller.seedmarket')->with('seed_sellers', $seed_sellers);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +43,7 @@ class SeedSellerController extends Controller
             'Price_Per_Unit' => ['required', 'string', 'max:255',],
             'PaymentMode' => ['required', 'string', 'max:255'],
             'Remarks' => ['required', 'string', 'max:255'],
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'image_path' => ['required|mimes:jpg,png,jpeg|max:5048'],
         ]);
         $newImageName = time().'-'.'.'.$request->image->extension();
         $request->image->move(public_path('images'),$newImageName);
@@ -67,7 +72,8 @@ class SeedSellerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $seed_sellers = SeedSeller::find($id);
+        return view('seedseller.show')->with('seed_sellers', $seed_sellers);
     }
 
     /**

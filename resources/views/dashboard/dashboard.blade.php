@@ -36,7 +36,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="{{route('farmerrecords')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('seedseller')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -45,7 +45,7 @@
           <div class="small-box bg-success">
             <div class="inner">
               <h3>44</h3>
-              {{-- {{app/Models/multiplierRecord::count()}} --}}
+               
 
               <p>Multipliers</p>
             </div>
@@ -62,7 +62,8 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>65</h3>
+              <h3>33</h3>
+              {{-- {{('Models/multiplierRecord::count()')}} --}}
 
               <p>Service Providers</p>
             </div>
@@ -77,4 +78,6 @@
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
+
+ 
   @endsection

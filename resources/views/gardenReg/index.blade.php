@@ -21,7 +21,7 @@
         <td>{{ $garden_reg->id }}</td>
         <td>{{ $garden_reg->GardenName}}</td>
         <td>{{ $garden_reg->SellerLocation }}</td>
-         <td><a href = "{{route('gardenreg_edit',$garden_reg->id)}}"> Edit</a></td>
+         <td><a class="btn btn-info" href = "{{route('gardenreg_edit',$garden_reg->id)}}"> Edit</a></td>
          <td>
             <form method="DELETE" action="{{route('gardenreg_destroy',$garden_reg->id)}}">
                 @csrf

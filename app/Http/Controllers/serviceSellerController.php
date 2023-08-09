@@ -2,25 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\serviceSeller;
+use App\Models\ServiceSeller;
 use Illuminate\Http\Request;
 
-class serviceSellerController extends Controller
+class ServiceSellerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('MarketPlace.serviceSeller');
-    }
+     {
+       $service_sellers = ServiceSeller::all();
+       return view('serviceseller.index')->with('service_sellers', $service_sellers);
+  
 
+}
+
+     public function marketplace(){
+
+         $service_sellers = ServiceSeller::all();
+        return view('serviceseller.servicemarket')->with('service_sellers', $service_sellers);
+ }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+      return view('serviceseller.serviceseller');
     }
 
     /**
@@ -30,26 +38,30 @@ class serviceSellerController extends Controller
     {
        // return ('value posted');
         $this->validate($request,[
-            'Name' => ['string', 'max:255'],
-            'Type' => ['required', 'string', 'max:255'],
+            'serviceSellerCompany' => ['string', 'max:255'],
+            'serviceName' => ['string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
             'offerType' => ['required', 'string', 'max:255'],
-            'conditoins' => ['required', 'string', 'max:255'],
-            'Price_Per_Unit' => ['required', 'string', 'max:255',],
-            'PaymentMode' => ['required', 'string', 'max:255'],
+            'conditions' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'string', 'max:255',],
             'Remarks' => ['required', 'string', 'max:255'],
-            'image_path' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'image_path' => ['mimes:jpg,png,jpeg|max:5048'],
         ]);
         $newImageName = time().'-'.'.'.$request->image->extension();
-        dd($newImageName);
-
-        $serviceSeller = new serviceSeller();
-        $serviceSeller->Name = $request->input('Name');
-        $serviceSeller->Quantity = $request->input('Quantity');
-        $serviceSeller->Unit = $request->input('Unit');
-        $serviceSeller->Price_Per_Unit = $request->input('Price_Per_Unit');
-        $serviceSeller->PaymentMode = $request->input('PaymentMode');
+        $request->image->move(public_path('images'),$newImageName);
+        // dd('$newImageName');  
+        $serviceSeller = new ServiceSeller();
+        $serviceSeller->serviceSellerCompany = $request->input('serviceSellerCompany');
+        $serviceSeller->serviceName = $request->input('serviceName');
+        $serviceSeller->type = $request->input('type');
+        $serviceSeller->offerType = $request->input('offerType');
+        $serviceSeller->conditions = $request->input('conditions');
+        $serviceSeller->price = $request->input('price');
         $serviceSeller->Remarks = $request->input('Remarks');
+        $serviceSeller->image_path =$newImageName;
         $res = $serviceSeller->save();
+        return redirect('serviceseller')->with('success', 'Submitted Successfully');
+
     }
 
     /**
@@ -57,15 +69,16 @@ class serviceSellerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $service_sellers = ServiceSeller::find($id);
+        return view('serviceseller.show')->with('service_sellers', $service_sellers);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
-        //
+    { $service_sellers = ServiceSeller::find($id);
+        return view('serviceseller.edit')->with('service_sellers', $service_sellers);
     }
 
     /**
@@ -73,7 +86,30 @@ class serviceSellerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+         $this->validate($request,[
+            'serviceSellerCompany' => ['string', 'max:255'],
+            'serviceName' => ['string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
+            'offerType' => ['required', 'string', 'max:255'],
+            'conditions' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'string', 'max:255',],
+            'Remarks' => ['required', 'string', 'max:255'],
+            'image_path' => 'required|mimes:jpg,png,jpeg|max:5048',
+        ]);
+        $newImageName = time().'-'.'.'.$request->image->extension();
+        $request->image->move(public_path('images'),$newImageName);
+
+        $serviceSeller = ServiceSeller::find($id);
+        $serviceSeller->serviceSellerCompany = $request->input('serviceSellerCompany');
+        $serviceSeller->serviceName = $request->input('serviceName');
+        $serviceSeller->type = $request->input('type');
+        $serviceSeller->offerType = $request->input('offerType');
+        $serviceSeller->conditions = $request->input('conditions');
+        $serviceSeller->price = $request->input('price');
+        $serviceSeller->Remarks = $request->input('Remarks');
+        $serviceSeller->image_path =$newImageName;
+        $res = $serviceSeller->save();
+        return redirect('serviceseller')->with('success', 'Submitted Successfully');
     }
 
     /**
@@ -81,6 +117,9 @@ class serviceSellerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       
+        $service_sellers = ServiceSeller::find($id);
+        $service_sellers->delete();
+        return redirect('/serviceseller')->with('success', 'deleted Successfully');
     }
 }

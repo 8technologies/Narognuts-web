@@ -52,7 +52,7 @@ body{
 }
 
 form{
-    height: 620px;
+    height: 520px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -137,7 +137,6 @@ button{
     </style>
     
 
-    
 </head>
 <body>
     <div class="background">
@@ -192,9 +191,18 @@ button{
                                 <button type="submit">
                                     {{ __('Login') }}
                                 </button>
-                                    {{-- <button  type="submit" class="btn btn-danger">
-                                        {{ __('Register') }}
-                                    </button> --}}
+                                    {{-- <button class="button"> --}}
+                                        <br>
+                                    <div>
+                                        <h4>Dont Have An Account?  <a  href="{{ route('register') }}">  {{__('Register')  }}</a></h4>
+                                        {{-- <a class="button" ">
+                                            {{__('Register')  }}
+                                        </a> --}}
+                                    </div>
+                                 {{-- </button>  --}}
+                                    {{-- <a class="button" href="{{ route('register') }}">
+                                        ('Register') 
+                                    </a> --}}
                                 
 
                                 @if (Route::has('password.request'))

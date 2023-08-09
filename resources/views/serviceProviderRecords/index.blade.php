@@ -21,7 +21,7 @@
         <td>{{ $Service_provider_records->id }}</td>
         <td>{{ $Service_provider_records->FirstName}}</td>
         <td>{{ $Service_provider_records->LastName }}</td>
-         <td><a href = "{{route('serviceproviderrecords_edit',$Service_provider_records->id)}}"> Edit</a></td>
+         <td><a class="btn btn-info" href = "{{route('serviceproviderrecords_edit',$Service_provider_records->id)}}"> Edit</a></td>
          <td>
             <form method="DELETE" action="{{route('serviceproviderrecords_destroy',$Service_provider_records->id)}}">
                 @csrf

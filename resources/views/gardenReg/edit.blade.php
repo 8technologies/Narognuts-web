@@ -88,7 +88,7 @@
     
       <div class="form-group row">
         <div class="col-sm-10 offset-sm-2">
-            <a class="btn btn-danger" href = "#"> Back</a>
+            <a class="btn btn-danger" href = "{{route('gardenReg')}}"> Back</a>
         <div class="col-sm-2 offset-sm-10">
           <button type="submit" class="btn btn-primary">Edit</button>
         </div> 

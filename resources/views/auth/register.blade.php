@@ -376,6 +376,9 @@ body{
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <div>
+                              <h4>Already Have An Account?  <a  href="{{ route('login') }}">  {{__('Login')  }}</a></h4>
+                            </div>
                         </div>
                     </form>
                 </div>
