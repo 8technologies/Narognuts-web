@@ -87,7 +87,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/UI/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="bi bi-question-circle nav-icon"></i>
                   <p>Ask The Expert</p>
                 </a>
               </li>
