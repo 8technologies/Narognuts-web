@@ -165,12 +165,12 @@
                 </a>
               </li>
              
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{route('permissionCreate')}}"" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Permission Management</p>
                 </a>
-              </li>
+              </li> --}}
               @endrole
               
 {{--          

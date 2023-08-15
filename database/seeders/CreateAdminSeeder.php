@@ -17,14 +17,14 @@ class CreateAdminSeeder extends Seeder
     {
         $role= Role::create(['name'=>'Admin']);
         $user = User::create([
-        'FirstName'=>'Mubiito',
-        'MiddleName'=>'Ed',
-        'LastName'=>'Edward',
+        'FirstName'=>'Mbabazi',
+        'MiddleName'=>'Isaac',
+        'LastName'=>'Isaac',
         'Sex'=>'Male',
-        'PhoneNumber'=>'077875467765',
+        'PhoneNumber'=>'0780602550',
         'UserName'=>'edward',
-        'email'=>'mubiitoedward6@gmail.com',
-        'password'=>'qqqqqqqqqq',
+        'email'=>'mbabaziisaac@gmail.com',
+        'password'=>'isaac1234',
         'role'=>$role->name,
         
         ]);
