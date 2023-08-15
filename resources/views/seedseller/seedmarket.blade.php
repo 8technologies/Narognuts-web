@@ -15,11 +15,18 @@
                 <img src="images/{{ $seed_sellers->image_path }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $seed_sellers->Name }}</h5>
+                </div>
+                <hr>
+                <div class="card-body">
                   <h5 class="card-title">Price: {{ $seed_sellers->Price_Per_Unit }}.shs</h5>
-                  <hr>
+                  
                   <p class="card-text">{{ $seed_sellers->Remarks}} </p>
                   <a href="{{ route('seedseller_show', $seed_sellers->id) }}" class="btn btn-primary">View Detail</a>
                 </div>
+                <a  href="#" class="btn btn-primary">
+                  <i class="nav-icon fa fa-shopping-cart"></i>
+                  Add to cart</a>
+              </div>
               </div>
             @endforeach
         </div>

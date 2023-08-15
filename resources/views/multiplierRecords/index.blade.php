@@ -21,7 +21,7 @@
         <td>{{ $multiplier_records->id }}</td>
         <td>{{ $multiplier_records->FirstName}}</td>
         <td>{{ $multiplier_records->LastName }}</td>
-         <td><a href = "{{route('multiplierrecords_edit',$multiplier_records->id)}}"> Edit</a></td>
+         <td><a class="btn btn-primary" href = "{{route('multiplierrecords_edit',$multiplier_records->id)}}"> Edit</a></td>
          <td>
             <form method="DELETE" action="{{route('multiplierrecords_destroy',$multiplier_records->id)}}">
                 @csrf

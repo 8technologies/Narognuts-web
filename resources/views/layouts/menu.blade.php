@@ -1,4 +1,5 @@
 
+
 <li class="nav-item menu-open">
     {{-- <a href="#" class="nav-link active">
       <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -8,12 +9,14 @@
       </p>
     </a> --}}
     <ul class="nav nav-treeview">
+      @role('Admin')
       <li class="nav-item">
         <a href="{{route('dashboardindex')}}" class="nav-link active">
           <i class="fas fa-tachometer-alt nav-icon"></i>
           <p>Dashboard </p>
         </a>
       </li>
+      @endrole
       
     </ul>
   </li>
@@ -86,7 +89,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="{{route('asktheexpertindex')}}" class="nav-link">
                   <i class="bi bi-question-circle nav-icon"></i>
                   <p>Ask The Expert</p>
                 </a>
@@ -144,31 +147,32 @@
             </ul>
             </li>
 
-          
-          {{-- <li class="nav-header">Others</li>
-          <li class="nav-item">
+            @role('Admin')   
+         <li class="nav-header">Others</li>
+            {{--<li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Calendar
                 <span class="badge badge-info right"></span>
               </p>
-            </a>
-      
+            </a> --}}
+     
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{route('roles_index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>Roles Management</p>
                 </a>
               </li>
              
               <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
+                <a href="{{route('permissionCreate')}}"" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
+                  <p>Permission Management</p>
                 </a>
               </li>
-              --}}
+              @endrole
+              
 {{--          
              
           <li class="nav-header">LABELS</li>

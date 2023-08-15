@@ -86,13 +86,13 @@
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                   <li class="text light nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a style="color:white" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                   </li>
                   <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a style="color:white" href="#" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a style="color:white" href="#" class="nav-link">Contact</a>
                   </li>
                 </ul>
             
@@ -112,7 +112,7 @@
                           </li>
                       @endif
                   @else
-                      <li class="nav-item dropdown">
+                      <li class="nav-item dropdown" style="margin-right:20px">
                           <a id="navbarDropdown" class="text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->UserName }}
                           </a>

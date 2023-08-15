@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AskTheExpertController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\farmerRecordsController;
@@ -12,8 +13,10 @@ use App\Http\Controllers\SeedSellerController;
 use App\Http\Controllers\ServiceSellerController;
 use App\Http\Controllers\preOrderController;
 use App\Http\Controllers\RecordsManagementController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserController;
+use Encore\Admin\Controllers\PermissionController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -87,7 +90,7 @@ Route::get("serviceseller_show/{id}", [ServiceSellerController::class, "show"])-
 Route::get("servicemarket", [ServiceSellerController::class, "marketplace"])->name('servicemarket');
 Route::get("serviceseller", [ServiceSellerController::class, "index"])->name('serviceseller');
 Route::post('/serviceseller', [ServiceSellerController::class, "store"])->name('serviceseller');
-Route::get('/store', [ServiceSellerController::class, "store"]);
+
 
 Route::get("create", [preOrderController::class, "create"]);
 Route::get("preOrder", [preOrderController::class, "index"])->name('preOrder');
@@ -108,20 +111,52 @@ Route::get('/store', [RecordsManagementController::class, "store"]);
 
 
 
-Route::get("usercreate", [UsersController::class, "create"]);
-Route::get("edit", [UsersController::class, "edit"])->name('useredit');
-Route::get("update", [UsersController::class, "update"])->name('userupdate');
-Route::get("destroy", [UsersController::class, "destroy"])->name('userdestroy');
+Route::get("user_create", [UsersController::class, "create"])->name('user_create');
+Route::patch("user_edit/{id}", [UsersController::class, "edit"])->name('user_edit');
+Route::get("user_destroy/{id}", [UsersController::class, "destroy"])->name('user_destroy');
 Route::get("userindex", [UsersController::class, "index"])->name('userindex');
-Route::post('store', [UsersController::class, "store"])->name('userstore');
-//Route::post("create", [UsersController::class, "create"])->name('gardenRegCreate');
-//Route::get('store', [UsersController::class, "store"]);
+Route::post('userstore', [UsersController::class, "store"])->name('userstore');
+Route::patch("user_update /{id}", [UsersController::class, "update"])->name('user_update');
+
+Route::get("asktheexpert_create", [AskTheExpertController::class, "create"])->name('asktheexpert_create');
+Route::get("asktheexpert_edit/{id}", [AskTheExpertController::class, "edit"])->name('asktheexpert_edit');
+Route::get("asktheexpert_destroy/{id}", [AskTheExpertController::class, "destroy"])->name('asktheexpert_destroy');
+Route::get("asktheexpert", [AskTheExpertController::class, "index"])->name('asktheexpertindex');
+Route::post('asktheexpert', [AskTheExpertController::class, "store"])->name('asktheexpertstore');
+Route::get("asktheexpert_update /{id}", [AskTheExpertController::class, "update"])->name('asktheexpert_update');
+
+
+
+Route::get("rolesCreate", [RolesController::class, "create"]);
+Route::get("roles_edit/{id}", [RolesController::class, "edit"])->name('roles_edit');
+Route::get("roles_show/{id}", [RolesController::class, "show"])->name('roles_show');
+Route::patch("roles_update", [RolesController::class, "update"])->name('roles_update');
+Route::delete("roles_destroy/{id}", [RolesController::class, "destroy"])->name('roles_destroy');
+Route::get("roles", [RolesController::class, "index"])->name('roles_index');
+Route::post('/roles', [RolesController::class, "store"])->name('roles_store');
+Route::post("rolesCreate", [RolesController::class, "create"])->name('rolesCreate');
+Route::get('/store', [RolesController::class, "store"]);
+
+
+Route::get("permissionCreate", [PermissionController::class, "create"]);
+Route::get("permission_edit", [PermissionController::class, "edit"])->name('permission_edit');
+Route::get("permission_show/{id}", [PermissionController::class, "show"])->name('permission_show');
+Route::get("permission_update", [PermissionController::class, "update"])->name('permission_update');
+Route::get("permission_destroy", [PermissionController::class, "destroy"])->name('permission_destroy');
+Route::get("permission", [PermissionController::class, "index"])->name('permission_index');
+Route::post('/permission', [PermissionController::class, "store"])->name('permission_store');
+Route::post("permissionCreate", [PermissionController::class, "create"])->name('permissionCreate');
+Route::get('/store', [PermissionController::class, "store"]);
+
 
 
 // Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 //     Route::post("create", [farmerRecordsController::class, "create"]);
 //     Route::post("create", [seedSellerController::class, "create"]);
 // });
+
+// Route::resource('roles', RolesController::class);
+// Route::resource('permissions', PermissionsController::class);
 });
 
 

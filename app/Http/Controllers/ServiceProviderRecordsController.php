@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service_provider_records;
+use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 
 class ServiceProviderRecordsController extends Controller
 {
@@ -78,6 +80,8 @@ class ServiceProviderRecordsController extends Controller
      */
     public function edit(string $id)
     {
+        //$decryptid=Crypt::decrypt($id);
+        //$user=User::find($decryptid);
         $Service_provider_records = Service_provider_records::find($id);
         return view('serviceProviderRecords.edit')->with('Service_provider_records', $Service_provider_records);
     }

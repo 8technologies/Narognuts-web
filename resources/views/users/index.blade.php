@@ -4,6 +4,7 @@
 
 <h1>Registered Users</h1>
 
+<a  class="btn btn-dark" href = "{{route('user_create')}}"> AddUser</a>
 <div class="card-body p-0">
     <div class="table-responsive">
         <table class="table" id="case-models-table">
@@ -12,7 +13,9 @@
                 <th>Id</th>
                 <th>FirstName</th>
                 <th>LastName</th>
-                <th colspan="3">Action</th>
+                <th>Email</th>
+                <th>Permision</th>
+                <th>Action</th>
             </tr>
             </thead>
     <tbody>
@@ -21,14 +24,19 @@
         <td>{{ $users->id }}</td>
         <td>{{ $users->FirstName}}</td>
         <td>{{ $users->LastName }}</td>
-         <td><a href = "{{route('gardenreg_edit',$users->id)}}"> Edit</a></td>
-         {{-- <td>
-           <form method="DELETE" action="{{route('farmerRecords_destroy',$farmer_records->id)}}">
+        <td>{{ $users->email }}</td>
+        @foreach ($users->getDirectPermissions() as $permission)
+        <span class="badge text-sm bg-info text-dark">{{$permission->id}}</span>
+            
+        @endforeach
+         <td><a class="btn btn-info" href = "{{route('user_edit',$users->id)}}"> Edit</a></td>
+          <td>
+           <form method="DELETE" action="{{route('user_destroy',$users->id)}}">
                 @csrf
                  @method('DELETE') 
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
-        </td> --}}
+        </td> 
     </tr>
 
     @empty

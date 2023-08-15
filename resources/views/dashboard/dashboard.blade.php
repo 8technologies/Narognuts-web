@@ -11,14 +11,14 @@
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>44</h3>
+            <h3>{{\app\Models\User::count()}}</h3>
 
-            <p>Gardens</p>
+            <p>users</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="{{route('gardenReg')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{route('userindex')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-               <h3>150</h3> 
+               <h3>0</h3> 
 
               <p>Farmers</p>
             </div>
@@ -44,7 +44,8 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>44</h3>
+              <h3>0</h3> 
+
                
 
               <p>Multipliers</p>
@@ -62,8 +63,8 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>33</h3>
-              {{-- {{('Models/multiplierRecord::count()')}} --}}
+              <h3>0</h3> 
+              
 
               <p>Service Providers</p>
             </div>

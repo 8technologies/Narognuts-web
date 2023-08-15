@@ -17,10 +17,14 @@
                   <h5 class="card-title">{{ $service_sellers->serviceName }}</h5>
                   <h5 class="card-title">{{ $service_sellers->serviceSellerCompany }}</h5>
                   <h5 class="card-title">Price: {{ $service_sellers->price }}.shs</h5>
-                  <hr>
+                  {{-- <hr> --}}
                   <p class="card-text">{{ $service_sellers->Remarks}} </p>
                   <a href="{{ route('serviceseller_show', $service_sellers->id) }}" class="btn btn-primary">View Detail</a>
                 </div>
+                <a  href="#" class="btn btn-primary">
+                  <i class="nav-icon fa fa-shopping-cart"></i>
+                  Add to cart</a>
+              </div>
               </div>
             @endforeach
         </div>
