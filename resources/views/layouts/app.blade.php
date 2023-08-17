@@ -65,7 +65,7 @@
   .required::after{
             content: " *";
             color: red;
-            font-size:20px;
+            font-size:10px;
         }
     </style>
     <!-- Scripts -->
@@ -88,12 +88,12 @@
                   <li class="text light nav-item">
                     <a style="color:white" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                   </li>
-                  <li class="nav-item d-none d-sm-inline-block">
+                  {{-- <li class="nav-item d-none d-sm-inline-block">
                     <a style="color:white" href="#" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item d-none d-sm-inline-block">
                     <a style="color:white" href="#" class="nav-link">Contact</a>
-                  </li>
+                  </li> --}}
                 </ul>
             
                 <!-- Right navbar links -->

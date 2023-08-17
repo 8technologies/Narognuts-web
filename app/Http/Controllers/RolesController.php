@@ -70,9 +70,9 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
-        $role = $role;
+        $role = Role::find($id);
         $rolePermissions = $role->permissions;
     
         return view('roles.show', compact('role', 'rolePermissions'));

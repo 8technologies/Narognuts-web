@@ -147,9 +147,9 @@
             </ul>
             </li>
 
-            @role('Admin')   
+          {{-- @role('Admin') --}}
          <li class="nav-header">Others</li>
-            {{--<li class="nav-item">
+           {{-- <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
@@ -165,13 +165,13 @@
                 </a>
               </li>
              
-              {{-- <li class="nav-item">
-                <a href="{{route('permissionCreate')}}"" class="nav-link">
+              <li class="nav-item">
+                <a href="{{route('permission_index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Permission Management</p>
                 </a>
-              </li> --}}
-              @endrole
+              </li> 
+              {{-- @endrole  --}}
               
 {{--          
              

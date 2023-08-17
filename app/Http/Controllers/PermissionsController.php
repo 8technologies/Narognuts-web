@@ -46,7 +46,7 @@ class PermissionsController extends Controller
 
         Permission::create($request->only('name'));
 
-        return redirect()->route('permissions_index')
+        return redirect()->route('permission_index')
             ->withSuccess(__('Permission created successfully.'));
     }
 
@@ -56,8 +56,8 @@ class PermissionsController extends Controller
      * @param  Permission  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permission $permission)
-    {
+    public function edit($id)
+    {  $permission = permission::find($id);
         return view('permissions.edit', [
             'permission' => $permission
         ]);
@@ -70,15 +70,20 @@ class PermissionsController extends Controller
      * @param  Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permission $permission)
+    public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|unique:permissions,name,'.$permission->id
+            'name' => 'required|unique:permissions,name,',
         ]);
+
+        $permission = permission::find($id);
+
+        $permission->name = $request->input('name');
+
 
         $permission->update($request->only('name'));
 
-        return redirect()->route('permissions_index')
+        return redirect()->route('permission_index')
             ->withSuccess(__('Permission updated successfully.'));
     }
 
@@ -88,11 +93,12 @@ class PermissionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permission $permission)
+    public function destroy($id)
     {
+        $permission = Permission::find($id);
         $permission->delete();
 
-        return redirect()->route('permissions.index')
+        return redirect()->route('permission_index')
             ->withSuccess(__('Permission deleted successfully.'));
     }
 }

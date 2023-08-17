@@ -16,7 +16,7 @@ use App\Http\Controllers\RecordsManagementController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserController;
-use Encore\Admin\Controllers\PermissionController;
+use App\Http\Controllers\PermissionsController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -42,9 +42,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Route::get("create", [farmerRecordsController::class, "create"]);
 Route::get("farmerrecords_edit", [farmerRecordsController::class, "edit"])->name('farmerrecords_edit');
 Route::get("farmerrecords", [farmerRecordsController::class, "index"])->name('farmerrecords');
-Route::post("/farmerrecords", [farmerRecordsController::class, "store"])->name('farmerrecords');
+// Route::post("/farmerrecords", [farmerRecordsController::class, "store"])->name('farmerrecords');
 Route::get("farmerrecords_create", [farmerRecordsController::class, "create"])->name('farmerrecords_create');
-Route::get("farmerrecords", [farmerRecordsController::class, "destroy"])->name('farmerrecords');
+Route::get("farmerrecords", [farmerRecordsController::class, "destroy"])->name('farmerrecords.destroy');
 Route::post('/store', [farmerRecordsController::class, "store"])->name('farmerrecords');
 
 
@@ -138,15 +138,15 @@ Route::post("rolesCreate", [RolesController::class, "create"])->name('rolesCreat
 Route::get('/store', [RolesController::class, "store"]);
 
 
-Route::get("permissionCreate", [PermissionController::class, "create"]);
-Route::get("permission_edit", [PermissionController::class, "edit"])->name('permission_edit');
-Route::get("permission_show/{id}", [PermissionController::class, "show"])->name('permission_show');
-Route::get("permission_update", [PermissionController::class, "update"])->name('permission_update');
-Route::get("permission_destroy", [PermissionController::class, "destroy"])->name('permission_destroy');
-Route::get("permission", [PermissionController::class, "index"])->name('permission_index');
-Route::post('/permission', [PermissionController::class, "store"])->name('permission_store');
-Route::post("permissionCreate", [PermissionController::class, "create"])->name('permissionCreate');
-Route::get('/store', [PermissionController::class, "store"]);
+Route::get("permissionCreate", [PermissionsController::class, "create"]);
+Route::get("permission_edit/{id}", [PermissionsController::class, "edit"])->name('permission_edit');
+Route::get("permission_show/{id}", [PermissionsController::class, "show"])->name('permission_show');
+Route::get("permission_update/{id}", [PermissionsController::class, "update"])->name('permission_update');
+Route::delete("permission_destroy/{id}", [PermissionsController::class, "destroy"])->name('permission_destroy');
+Route::get("permission", [PermissionsController::class, "index"])->name('permission_index');
+Route::post('/permission', [PermissionsController::class, "store"])->name('permission_store');
+Route::post("permissionCreate", [PermissionsController::class, "create"])->name('permissionCreate');
+Route::get('/store', [PermissionsController::class, "store"]);
 
 
 

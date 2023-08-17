@@ -24,7 +24,7 @@
                   <div class="col-sm-10 offset-sm-2">
                     <div class="row">
                         <div class="col-sm-4 offset-sm-8">
-                            <a href="{{ route('seedseller') }}" class="btn btn-success btn-block">Back</a>
+                            <a href="{{ route('seedmarket') }}" class="btn btn-success btn-block">Back</a>
                         </div>
                        @role('Admin') 
                         <div class="col-sm-4 mt-2">

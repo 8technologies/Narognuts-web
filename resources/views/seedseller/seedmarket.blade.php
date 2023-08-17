@@ -23,9 +23,9 @@
                   <p class="card-text">{{ $seed_sellers->Remarks}} </p>
                   <a href="{{ route('seedseller_show', $seed_sellers->id) }}" class="btn btn-primary">View Detail</a>
                 </div>
-                <a  href="#" class="btn btn-primary">
+                <a  href="#" class="btn btn-success">
                   <i class="nav-icon fa fa-shopping-cart"></i>
-                  Add to cart</a>
+                  Buy</a>
               </div>
               </div>
             @endforeach

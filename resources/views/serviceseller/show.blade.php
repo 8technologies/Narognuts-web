@@ -30,10 +30,9 @@
         <div class="col-sm-10 offset-sm-2">
           <div class="row">
               <div class="col-sm-4 offset-sm-8">
-                  <a href="{{ route('serviceseller') }}" class="btn btn-success btn-block">Back</a>
+                  <a href="{{ route('servicemarket') }}" class="btn btn-success btn-block">Back</a>
               </div>
-              @if(!Auth::guest())
-              @if(Auth::user()->id == $service_sellers->user_id)
+              @role('Admin')
               <div class="col-sm-4 mt-2">
                   <a class="btn btn-info btn-block" href="{{ route('serviceseller_edit', $service_sellers->id) }}">Edit</a>
               </div>
@@ -44,8 +43,7 @@
                       <button type="submit" class="btn btn-danger btn-block">Delete</button>
                   </form>
               </div>
-              @endif
-              @endif
+             @endrole
           </div>
       </div>
       

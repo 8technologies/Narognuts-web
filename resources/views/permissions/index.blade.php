@@ -31,6 +31,7 @@
                         <td><a href="{{ route('permission_edit', $permission->id) }}" class="btn btn-info btn-sm">Edit</a></td>
                         <td>
                             {!! Form::open(['method' => 'DELETE','route' => ['permission_destroy', $permission->id],'style'=>'display:inline']) !!}
+                            {{Form::hidden('_method', 'DELETE')}}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
                         </td>
