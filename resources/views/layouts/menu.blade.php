@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web/css/all.min.css') }}">
 
 <li class="nav-item menu-open">
     {{-- <a href="#" class="nav-link active">
@@ -9,14 +9,14 @@
       </p>
     </a> --}}
     <ul class="nav nav-treeview">
-      {{-- @role('Admin') --}}
+      @role('Admin')
       <li class="nav-item">
         <a href="{{route('dashboardindex')}}" class="nav-link active">
           <i class="fas fa-tachometer-alt nav-icon"></i>
           <p>Dashboard </p>
         </a>
       </li>
-      {{-- @endrole --}}
+      @endrole 
       
     </ul>
   </li>
@@ -33,20 +33,18 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('farmerrecords_create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Farmer</p>
+                  <i class="fa-solid fa-wheat-awn"></i>                  <p>Farmer</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('multiplierrecords_create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-briefcase"></i>
                   <p>Multiplier</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('serviceproviderrecords_create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Service Provider</p>
+                  <i class="fa-brands fa-servicestack"></i>                  <p>Service Provider</p>
                 </a>
               </li>
         
@@ -66,8 +64,8 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('gardenRegCreate')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Garden Registration</p>
+                  <i class="fa-solid fa-file-waveform"></i>
+                                    <p>Garden Registration</p>
                 </a>
               </li>
               {{-- <li class="nav-item">
@@ -81,7 +79,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="fa-solid fa-bug"></i>
               <p>
                 Paste And Disease
                 <i class="fas fa-angle-left right"></i>
@@ -90,8 +88,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('asktheexpertindex')}}" class="nav-link">
-                  <i class="bi bi-question-circle nav-icon"></i>
-                  <p>Ask The Expert</p>
+                  <i class="fa-solid fa-question"></i>                  <p>Ask The Expert</p>
                 </a>
               </li>
             
@@ -100,7 +97,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-shopping-cart"></i>
+              <i class="fa-solid fa-shop"></i>
               <p>
                 Market Place
                 <i class="right fas fa-angle-left"></i>
@@ -109,26 +106,26 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('seedseller_create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sellers of Seed</p>
+                  <i class="fa-solid fa-money-bill-wheat"></i>
+                                    <p>Sellers of Seed</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('seedmarket')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fa fa-shopping-cart"></i>
                   <p>Seed Market</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('serviceseller_create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sellers of Service</p>
+                  <i class="fa-solid fa-money-bill-wheat"></i>
+                                    <p>Sellers of Service</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="{{route('servicemarket')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="nav-icon fa fa-shopping-cart"></i>
                   <p>Service Market</p>
                 </a>
               </li>
@@ -140,8 +137,8 @@
               </li> --}}
               <li class="nav-item">
                 <a href="{{route('preOrder')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pre Order</p>
+                  <i class="fa-brands fa-opencart"></i>
+                                    <p>Pre Order</p>
                 </a>
               </li>
             </ul>
@@ -160,15 +157,15 @@
      
               <li class="nav-item">
                 <a href="{{route('roles_index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-bar-chart"></i>
                   <p>Roles Management</p>
                 </a>
               </li>
              
               <li class="nav-item">
                 <a href="{{route('permission_index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Permission Management</p>
+                  <i class="fa-solid fa-drum"></i>
+                 <p>Permission Management</p>
                 </a>
               </li> 
               {{-- @endrole  --}}

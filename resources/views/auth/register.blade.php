@@ -12,7 +12,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2ae880;
+  background-image:url("{{ asset('dist/img/peanut-plant-bg.jpg') }}");
   padding: 30px;
 }
 .required::after{
@@ -229,7 +229,7 @@ body{
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="{{ asset('dist/img/gnut-dp.jpg') }}" alt="">
+        <img src="{{ asset('dist/img/Naro-Groundnut-favicon-2.png') }}" alt="">
         <div class="text">
           <span class="text-1">Welcome to Agriculture in Modern era! <br> Advance your Farming!</span>
           <span class="text-2">Let's get started</span>
@@ -372,12 +372,12 @@ body{
 
                         <div class="row mb-0">
                             <div class="signup-form button input-box col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-success">
+                                <button style="color:yellow" type="submit" class="btn btn-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                             <div>
-                              <h4>Already Have An Account?  <a  href="{{ route('login') }}">  {{__('Login')  }}</a></h4>
+                              <h4>Already Have An Account?  <a style="color:green"  href="{{ route('login') }}">  {{__('Login')  }}</a></h4>
                             </div>
                         </div>
                     </form>
