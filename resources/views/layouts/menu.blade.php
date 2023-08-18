@@ -9,14 +9,14 @@
       </p>
     </a> --}}
     <ul class="nav nav-treeview">
-      @role('Admin')
+      {{-- @role('Admin') --}}
       <li class="nav-item">
         <a href="{{route('dashboardindex')}}" class="nav-link active">
           <i class="fas fa-tachometer-alt nav-icon"></i>
           <p>Dashboard </p>
         </a>
       </li>
-      @endrole
+      {{-- @endrole --}}
       
     </ul>
   </li>

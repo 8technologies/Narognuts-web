@@ -50,14 +50,14 @@
 
   .text-heading {
       display: inline-block;
-      background-color: rgb(223, 223, 222);
+      /* background-color: rgb(223, 223, 222); */
       color: rgb(7, 7, 7);
       font-weight: bold;
       padding: 10px;
     }
     .container {
       text-align: center;
-      background-color: rgb(223, 223, 222);
+      /* background-color: rgb(223, 223, 222); */
       /* color: white; */
       padding: 10px;
       border-radius: 20px;
@@ -67,6 +67,7 @@
             color: red;
             font-size:10px;
         }
+        
     </style>
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -88,12 +89,12 @@
                   <li class="text light nav-item">
                     <a style="color:white" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                   </li>
-                  {{-- <li class="nav-item d-none d-sm-inline-block">
+                  <li class="nav-item d-none d-sm-inline-block">
                     <a style="color:white" href="#" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item d-none d-sm-inline-block">
                     <a style="color:white" href="#" class="nav-link">Contact</a>
-                  </li> --}}
+                  </li>
                 </ul>
             
                 <!-- Right navbar links -->

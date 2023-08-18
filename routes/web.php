@@ -42,10 +42,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Route::get("create", [farmerRecordsController::class, "create"]);
 Route::get("farmerrecords_edit", [farmerRecordsController::class, "edit"])->name('farmerrecords_edit');
 Route::get("farmerrecords", [farmerRecordsController::class, "index"])->name('farmerrecords');
-// Route::post("/farmerrecords", [farmerRecordsController::class, "store"])->name('farmerrecords');
+Route::post("/farmerrecords", [farmerRecordsController::class, "store"])->name('farmerrecords');
 Route::get("farmerrecords_create", [farmerRecordsController::class, "create"])->name('farmerrecords_create');
 Route::get("farmerrecords", [farmerRecordsController::class, "destroy"])->name('farmerrecords.destroy');
-Route::post('/store', [farmerRecordsController::class, "store"])->name('farmerrecords');
+// Route::post('/store', [farmerRecordsController::class, "store"])->name('farmerrecords');
 
 
 Route::get("multiplierrecords_create", [MultiplierRecordsController::class, "create"])->name('multiplierrecords_create');
