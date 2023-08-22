@@ -40,19 +40,19 @@ body{
     border-radius: 50%;
 }
 @keyframes animate{
-    0%,100%{ background-image:url({{ asset('dist/img/Flower.jpg') }});
+    0%,100%{ background-image:url({{ asset('dist/img/NaSARRI-Groundnut-Experimental-and-Early-Generation-Seed-multiplication-block.jpg') }});
      }
-     25%{ background-image:url({{ asset('dist/img/GardenOne.png') }});
+     25%{ background-image:url({{ asset('dist/img/sustainability-13-02658-ag.webp') }});
      }
-     50%{ background-image:url({{ asset('dist/img/peanut-plant-bg.jpg') }});
+     50%{ background-image:url({{ asset('dist/img/groundnuts-uganda.jpg') }});
      }
-    75%{ background-image:url({{ asset('dist/img/Fruit.jpg') }});
+    75%{ background-image:url({{ asset('dist/img/groundnuts.jpg') }});
      }
 
 }
 
 form{
-    height: 520px;
+    height: 580px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -194,7 +194,7 @@ button{
                                     {{-- <button class="button"> --}}
                                         <br>
                                     <div>
-                                        <h4>Dont Have An Account?  <a  href="{{ route('register') }}">  {{__('Register')  }}</a></h4>
+                                        <h4>Dont Have An Account?  <a   style="color:white" href="{{ route('register') }}">  {{__('Register')  }}</a></h4>
                                         {{-- <a class="button" ">
                                             {{__('Register')  }}
                                         </a> --}}
@@ -206,7 +206,7 @@ button{
                                 
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a  style="color:white" class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

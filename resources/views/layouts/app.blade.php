@@ -114,9 +114,11 @@
                       @endif
                   @else
                       <li class="nav-item dropdown" style="margin-right:20px">
+                        <i class="fa-regular fa-user"></i>
                           <a id="navbarDropdown" class="text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->UserName }}
                           </a>
+                          
             
                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{{ route('logout') }}"

@@ -9,14 +9,14 @@
       </p>
     </a> --}}
     <ul class="nav nav-treeview">
-      @role('Admin')
+      {{-- @role('Admin') --}}
       <li class="nav-item">
         <a href="{{route('dashboardindex')}}" class="nav-link active">
           <i class="fas fa-tachometer-alt nav-icon"></i>
           <p>Dashboard </p>
         </a>
       </li>
-      @endrole 
+      {{-- @endrole  --}}
       
     </ul>
   </li>
@@ -138,7 +138,7 @@
               <li class="nav-item">
                 <a href="{{route('preOrder')}}" class="nav-link">
                   <i class="fa-brands fa-opencart"></i>
-                                    <p>Pre Order</p>
+                    <p>Pre Order</p>
                 </a>
               </li>
             </ul>

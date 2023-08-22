@@ -7,7 +7,7 @@
 <div class="card-body p-0">
     <div class="table-responsive">
         <table class="table" id="case-models-table">
-            <thead>
+            <thead> 
             <tr>
                 <th>Id</th>
                 <th>GardenName</th>
