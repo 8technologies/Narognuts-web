@@ -19,6 +19,26 @@ class UsersController extends Controller
        return view('users.index')->with('users', $users);
     }
 
+
+public function Useraccept(string $id)
+{
+    $data = User::find($id);
+    $data->form_status = 'Active';
+    $data->save();
+    return redirect()->back();
+
+}
+
+public function Userreject(string $id)
+{
+    $data = User::find($id);
+    $data->form_status = 'rejected';
+    $data->save();
+    return redirect()->back();
+
+}
+
+
     /**
      * Show the form for creating a new resource.
      */

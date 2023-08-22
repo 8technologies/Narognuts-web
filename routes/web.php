@@ -116,6 +116,9 @@ Route::patch("user_edit/{id}", [UsersController::class, "edit"])->name('user_edi
 Route::get("user_destroy/{id}", [UsersController::class, "destroy"])->name('user_destroy');
 Route::get("userindex", [UsersController::class, "index"])->name('userindex');
 Route::post('userstore', [UsersController::class, "store"])->name('userstore');
+Route::post('useraccept/{id}', [UsersController::class, "Useraccept"])->name('useraccept');
+Route::post('userreject/{id}', [UsersController::class, "Userreject"])->name('userreject');
+
 Route::patch("user_update /{id}", [UsersController::class, "update"])->name('user_update');
 
 Route::get("asktheexpert_create", [AskTheExpertController::class, "create"])->name('asktheexpert_create');

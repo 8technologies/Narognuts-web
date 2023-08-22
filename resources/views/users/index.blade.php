@@ -14,7 +14,7 @@
                 <th>FirstName</th>
                 <th>LastName</th>
                 <th>Email</th>
-                <th>Permision</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -30,6 +30,9 @@
             
         @endforeach
          <td><a class="btn btn-info" href = "{{route('user_edit',$users->id)}}"> Edit</a></td>
+        
+         <td><a class="btn btn-danger" href = "{{route('user_edit',$users->id)}}"> reject</a></td>
+         <td><a class="btn btn-outline-primary" href = "{{route('user_edit',$users->id)}}"> Accept</a></td>
           <td>
            <form method="DELETE" action="{{route('user_destroy',$users->id)}}">
                 @csrf
