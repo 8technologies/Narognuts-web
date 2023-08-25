@@ -53,9 +53,9 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                   <h3>{{\App\Models\FarmerRecord::count()}}</h3> 
+                   <h3>{{\App\Models\SeedSeller::count()}}</h3> 
     
-                  <p>Farmers</p>
+                  <p>Sellers Of seed</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -133,7 +133,7 @@
            <!-- DONUT CHART -->
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Donut Chart</h3>
+                <h3 class="card-title">demand for seed vs varriety</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -178,7 +178,7 @@
             <!-- LINE CHART -->
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Line Chart</h3>
+                <h3 class="card-title">seed demand</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -224,7 +224,7 @@
             <!-- STACKED BAR CHART -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Stacked Bar Chart</h3>
+                <h3 class="card-title">Seed Demand</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
